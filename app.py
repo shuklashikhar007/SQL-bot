@@ -197,7 +197,7 @@ st.markdown("""
 <div style="display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 1rem; border-bottom: 2px solid rgba(0,0,0,0.2); margin-bottom: 2rem;">
     <div>
         <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 8px;">
-            <div class="sticker">⚡ NATURAL LANGUAGE → SQL</div>
+            <div class="sticker"> NATURAL LANGUAGE → SQL</div>
             <span style="font-family: 'Space Mono'; font-size: 0.75rem; background: #fff; border: 1px solid #000; padding: 2px 6px;">AUTONOMOUS QUERY REWRITER</span>
         </div>
         <h1 style="margin: 0; font-size: 2.5rem; line-height: 1;">SQLBot <span style="color: #888;">///</span> Gen AI DB Manager</h1>
@@ -228,16 +228,16 @@ with st.sidebar:
     """, unsafe_allow_html=True)
     
     if groq_key:
-        st.success("✅ Groq API Key is SET")
+        st.success("Groq API Key is SET")
     else:
-        st.error("❌ Groq API Key MISSING")
+        st.error("Error: Groq API Key MISSING")
         
     if neon_url:
-        st.success("✅ Neon DB URL is SET")
+        st.success(" Neon DB URL is SET")
     else:
-        st.error("❌ Neon DB URL MISSING")
+        st.error("Error: Neon DB URL MISSING")
         
-    st.info("💡 Ensure your credentials are set in .env before prompting.")
+    st.info(" Ensure your credentials are set in .env before prompting.")
 
     st.markdown("""
     <div style="margin-top: 24px; border-top: 1px dashed #000; padding-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: center; font-family: 'Space Mono';">
@@ -285,7 +285,7 @@ with st.container():
         st.session_state.messages.append({"role": "user", "content": prompt})
 
         if not groq_key or not neon_url:
-            error_msg = "⚠️ Please configure your `.env` file with `GROQ_API_KEY` and `NEON_DATABASE_URL`."
+            error_msg = " Please configure your `.env` file with `GROQ_API_KEY` and `NEON_DATABASE_URL`."
             with st.chat_message("assistant"):
                 st.error(error_msg)
             st.session_state.messages.append({"role": "assistant", "content": error_msg})
